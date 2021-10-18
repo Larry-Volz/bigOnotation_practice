@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)http://curric.rithmschool.com/springboard/exercises/big-o-analysis/solution/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Big-O Notation Practice</title>
+
+    <link rel="stylesheet" href="./Big-O Notation Practice-teachers solution_files/pygments.css" type="text/css">
+    <link rel="stylesheet" href="./Big-O Notation Practice-teachers solution_files/handouts-sphinx.css">
+
+    
+    <link href="./Big-O Notation Practice-teachers solution_files/css" rel="stylesheet" type="text/css">
+    
+</head>
+<body cz-shortcut-listen="true">
+<div id="page-wrapper">
+    <div id="page-sidebar">
+        <header>
+            <p class="project">Springboard</p>
+
+            <p class="title">Big-O Notation Practice</p>
+
+            <p class="backlink"><a href="http://curric.rithmschool.com/springboard/exercises/big-o-analysis/solution/index.html"> « Back to Homepage</a></p>
+
+        </header>
+        <div id="toc">
+            <ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/exercises/big-o-analysis/solution/index.html#">Big-O Notation Practice</a><ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/exercises/big-o-analysis/solution/index.html#step-one-simplifying-expressions">Step One: Simplifying Expressions</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/exercises/big-o-analysis/solution/index.html#step-two-calculating-time-complexity">Step Two: Calculating Time Complexity</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/exercises/big-o-analysis/solution/index.html#part-3-short-answer">Part 3 - short answer</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+    </div>
+    <div id="page-content">
+        
+  <div class="section" id="big-o-notation-practice">
+<h1>Big-O Notation Practice</h1>
+<p>In this exercise, you’ll analyze expressions and code to figure out the time complexity.</p>
+<div class="section" id="step-one-simplifying-expressions">
+<h2>Step One: Simplifying Expressions</h2>
+<p>Simplify the following big O expressions as much as possible:</p>
+<ol class="arabic simple">
+<li>O(n + 10) -&gt; O(n)</li>
+<li>O(100 * n) -&gt; O(n)</li>
+<li>O(25) -&gt; O(1)</li>
+<li>O(n^2 + n^3) -&gt; O(n^3)</li>
+<li>O(n + n + n + n) -&gt; O(n)</li>
+<li>O(1000 * log(n) + n) -&gt; O(n)</li>
+<li>O(1000 * n * log(n) + n) -&gt; O(n log n)</li>
+<li>O(2^n + n^2) -&gt; O(2^n)</li>
+<li>O(5 + 3 + 1) -&gt; O(1)</li>
+<li>O(n + n^(1/2) + n^2 + n * log(n)^10) -&gt; O(n^2)</li>
+</ol>
+</div>
+<div class="section" id="step-two-calculating-time-complexity">
+<h2>Step Two: Calculating Time Complexity</h2>
+<p>Determine the time complexities for each of the following functions. If you’re not sure what these functions do, copy and paste them into the console and experiment with different inputs!</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">logUpTo</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Time Complexity: O(n)</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">logAtLeast10</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Time Complexity: O(n)</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">logAtMost10</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Time Complexity: O(1)</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">onlyElementsAtEvenIndex</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">newArray</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">newArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">newArray</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Time Complexity: O(n)</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">subtotals</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">subtotalArray</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">subtotal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">subtotal</span> <span class="o">+=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="nx">subtotalArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">subtotal</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">subtotalArray</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Time Complexity: O(n^2)</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">vowelCount</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">vowelCount</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="kr">const</span> <span class="nx">vowels</span> <span class="o">=</span> <span class="s2">"aeiouAEIOU"</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="kr">char</span> <span class="k">of</span> <span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">vowels</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="kr">char</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">if</span><span class="p">(</span><span class="kr">char</span> <span class="k">in</span> <span class="nx">vowelCount</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">vowelCount</span><span class="p">[</span><span class="kr">char</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">vowelCount</span><span class="p">[</span><span class="kr">char</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">vowelCount</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Time Complexity: O(n) // includes is on a fixed length string // the max number of keys is 10</p>
+</div>
+<div class="section" id="part-3-short-answer">
+<h2>Part 3 - short answer</h2>
+<p>Answer the following questions</p>
+<ol class="arabic simple">
+<li>True or false: n^2 + n is O(n^2). True</li>
+<li>True or false: n^2 * n is O(n^3). True</li>
+<li>True or false: n^2 + n is O(n). False</li>
+<li>What’s the time complexity of the .indexOf array method? O(n)</li>
+<li>What’s the time complexity of the .includes array method? O(n)</li>
+<li>What’s the time complexity of the .forEach array method? O(n) at least (depends on what the callback does)</li>
+<li>What’s the time complexity of the .sort array method? O(n log n)</li>
+<li>What’s the time complexity of the .unshift array method? O(n)</li>
+<li>What’s the time complexity of the .push array method? O(1)</li>
+<li>What’s the time complexity of the .splice array method? O(n) it can be O(1) if the end, but we can’t assume that</li>
+<li>What’s the time complexity of the .pop array method? O(1)</li>
+<li>What’s the time complexity of the Object.keys() function? O(n)</li>
+<li>What’s the space complexity of the Object.keys() function? O(n)</li>
+</ol>
+</div>
+</div>
+
+
+
+    </div>
+</div>
+<script type="text/javascript" src="./Big-O Notation Practice-teachers solution_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Big-O Notation Practice-teachers solution_files/underscore.js.download"></script>
+<script type="text/javascript" src="./Big-O Notation Practice-teachers solution_files/doctools.js.download"></script>
+<script type="text/javascript" src="./Big-O Notation Practice-teachers solution_files/language_data.js.download"></script> 
+
+</body></html>
